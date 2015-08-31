@@ -1,0 +1,73 @@
+[INFO ] 2015-08-31 16:19:33,070(0) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:35): start-->>getUserByPage  
+[INFO ] 2015-08-31 16:21:37,456(0) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:35): start-->>checkUser  
+[INFO ] 2015-08-31 16:21:37,466(10) --> [main] com.clps.managersystem.transaction.TransactionTemplate.execute(TransactionTemplate.java:15): TransactionManager init  
+[INFO ] 2015-08-31 16:21:37,470(14) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.init(ConnectionPoolManager.java:59): poolManager init start  
+[INFO ] 2015-08-31 16:21:37,475(19) --> [main] com.clps.managersystem.pool.ConnectionPoolImpl.init(ConnectionPoolImpl.java:45): pool init start  
+[INFO ] 2015-08-31 16:21:38,202(746) --> [main] com.clps.managersystem.pool.ConnectionPoolImpl.init(ConnectionPoolImpl.java:60): pool init success  
+[INFO ] 2015-08-31 16:21:38,203(747) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.init(ConnectionPoolManager.java:65): defaultPool init success  
+[INFO ] 2015-08-31 16:21:38,205(749) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.getConnection(ConnectionPoolManager.java:96): getConnection start  
+[INFO ] 2015-08-31 16:21:38,205(749) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.getConnection(ConnectionPoolManager.java:100): getConnection success  
+[INFO ] 2015-08-31 16:21:38,283(827) --> [main] com.clps.managersystem.transaction.TransactionTemplate.execute(TransactionTemplate.java:24): TransactionManager end  
+[INFO ] 2015-08-31 16:21:38,284(828) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:43): success-->>checkUser  
+[INFO ] 2015-08-31 16:22:01,122(0) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:35): start-->>getUserByPage  
+[INFO ] 2015-08-31 16:22:22,494(0) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:35): start-->>getUserByPage  
+[INFO ] 2015-08-31 16:25:04,080(0) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:35): start-->>getUserByPage  
+[INFO ] 2015-08-31 16:25:04,090(10) --> [main] com.clps.managersystem.transaction.TransactionTemplate.execute(TransactionTemplate.java:15): TransactionManager init  
+[INFO ] 2015-08-31 16:25:04,093(13) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.init(ConnectionPoolManager.java:59): poolManager init start  
+[INFO ] 2015-08-31 16:25:04,099(19) --> [main] com.clps.managersystem.pool.ConnectionPoolImpl.init(ConnectionPoolImpl.java:45): pool init start  
+[INFO ] 2015-08-31 16:25:04,568(488) --> [main] com.clps.managersystem.pool.ConnectionPoolImpl.init(ConnectionPoolImpl.java:60): pool init success  
+[INFO ] 2015-08-31 16:25:04,570(490) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.init(ConnectionPoolManager.java:65): defaultPool init success  
+[INFO ] 2015-08-31 16:25:04,572(492) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.getConnection(ConnectionPoolManager.java:96): getConnection start  
+[INFO ] 2015-08-31 16:25:04,572(492) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.getConnection(ConnectionPoolManager.java:100): getConnection success  
+[INFO ] 2015-08-31 16:25:04,728(648) --> [main] com.clps.managersystem.transaction.TransactionTemplate.execute(TransactionTemplate.java:24): TransactionManager end  
+[INFO ] 2015-08-31 16:25:04,728(648) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:48): success-->>getUserByPage  
+[INFO ] 2015-08-31 16:25:36,811(0) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:35): start-->>getUserByPage  
+[INFO ] 2015-08-31 16:25:36,821(10) --> [main] com.clps.managersystem.transaction.TransactionTemplate.execute(TransactionTemplate.java:15): TransactionManager init  
+[INFO ] 2015-08-31 16:25:36,826(15) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.init(ConnectionPoolManager.java:59): poolManager init start  
+[INFO ] 2015-08-31 16:25:36,831(20) --> [main] com.clps.managersystem.pool.ConnectionPoolImpl.init(ConnectionPoolImpl.java:45): pool init start  
+[INFO ] 2015-08-31 16:25:37,310(499) --> [main] com.clps.managersystem.pool.ConnectionPoolImpl.init(ConnectionPoolImpl.java:60): pool init success  
+[INFO ] 2015-08-31 16:25:37,312(501) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.init(ConnectionPoolManager.java:65): defaultPool init success  
+[INFO ] 2015-08-31 16:25:37,314(503) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.getConnection(ConnectionPoolManager.java:96): getConnection start  
+[INFO ] 2015-08-31 16:25:37,314(503) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.getConnection(ConnectionPoolManager.java:100): getConnection success  
+[INFO ] 2015-08-31 16:25:37,370(559) --> [main] com.clps.managersystem.transaction.TransactionTemplate.execute(TransactionTemplate.java:24): TransactionManager end  
+[INFO ] 2015-08-31 16:25:37,370(559) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:48): success-->>getUserByPage  
+[INFO ] 2015-08-31 16:25:53,560(0) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:35): start-->>getUserByPage  
+[INFO ] 2015-08-31 16:25:53,570(10) --> [main] com.clps.managersystem.transaction.TransactionTemplate.execute(TransactionTemplate.java:15): TransactionManager init  
+[INFO ] 2015-08-31 16:25:53,573(13) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.init(ConnectionPoolManager.java:59): poolManager init start  
+[INFO ] 2015-08-31 16:25:53,578(18) --> [main] com.clps.managersystem.pool.ConnectionPoolImpl.init(ConnectionPoolImpl.java:45): pool init start  
+[INFO ] 2015-08-31 16:25:54,021(461) --> [main] com.clps.managersystem.pool.ConnectionPoolImpl.init(ConnectionPoolImpl.java:60): pool init success  
+[INFO ] 2015-08-31 16:25:54,022(462) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.init(ConnectionPoolManager.java:65): defaultPool init success  
+[INFO ] 2015-08-31 16:25:54,024(464) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.getConnection(ConnectionPoolManager.java:96): getConnection start  
+[INFO ] 2015-08-31 16:25:54,024(464) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.getConnection(ConnectionPoolManager.java:100): getConnection success  
+[INFO ] 2015-08-31 16:25:54,081(521) --> [main] com.clps.managersystem.transaction.TransactionTemplate.execute(TransactionTemplate.java:24): TransactionManager end  
+[INFO ] 2015-08-31 16:25:54,081(521) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:48): success-->>getUserByPage  
+[INFO ] 2015-08-31 16:26:07,899(0) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:35): start-->>getUserByPage  
+[INFO ] 2015-08-31 16:26:07,908(9) --> [main] com.clps.managersystem.transaction.TransactionTemplate.execute(TransactionTemplate.java:15): TransactionManager init  
+[INFO ] 2015-08-31 16:26:07,912(13) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.init(ConnectionPoolManager.java:59): poolManager init start  
+[INFO ] 2015-08-31 16:26:07,917(18) --> [main] com.clps.managersystem.pool.ConnectionPoolImpl.init(ConnectionPoolImpl.java:45): pool init start  
+[INFO ] 2015-08-31 16:26:08,361(462) --> [main] com.clps.managersystem.pool.ConnectionPoolImpl.init(ConnectionPoolImpl.java:60): pool init success  
+[INFO ] 2015-08-31 16:26:08,363(464) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.init(ConnectionPoolManager.java:65): defaultPool init success  
+[INFO ] 2015-08-31 16:26:08,365(466) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.getConnection(ConnectionPoolManager.java:96): getConnection start  
+[INFO ] 2015-08-31 16:26:08,366(467) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.getConnection(ConnectionPoolManager.java:100): getConnection success  
+[INFO ] 2015-08-31 16:26:08,429(530) --> [main] com.clps.managersystem.transaction.TransactionTemplate.execute(TransactionTemplate.java:24): TransactionManager end  
+[INFO ] 2015-08-31 16:26:08,430(531) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:48): success-->>getUserByPage  
+[INFO ] 2015-08-31 16:26:43,191(0) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:35): start-->>getUserByPage  
+[INFO ] 2015-08-31 16:26:43,207(16) --> [main] com.clps.managersystem.transaction.TransactionTemplate.execute(TransactionTemplate.java:15): TransactionManager init  
+[INFO ] 2015-08-31 16:26:43,211(20) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.init(ConnectionPoolManager.java:59): poolManager init start  
+[INFO ] 2015-08-31 16:26:43,216(25) --> [main] com.clps.managersystem.pool.ConnectionPoolImpl.init(ConnectionPoolImpl.java:45): pool init start  
+[INFO ] 2015-08-31 16:26:43,636(445) --> [main] com.clps.managersystem.pool.ConnectionPoolImpl.init(ConnectionPoolImpl.java:60): pool init success  
+[INFO ] 2015-08-31 16:26:43,639(448) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.init(ConnectionPoolManager.java:65): defaultPool init success  
+[INFO ] 2015-08-31 16:26:43,642(451) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.getConnection(ConnectionPoolManager.java:96): getConnection start  
+[INFO ] 2015-08-31 16:26:43,642(451) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.getConnection(ConnectionPoolManager.java:100): getConnection success  
+[INFO ] 2015-08-31 16:26:43,699(508) --> [main] com.clps.managersystem.transaction.TransactionTemplate.execute(TransactionTemplate.java:24): TransactionManager end  
+[INFO ] 2015-08-31 16:26:43,699(508) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:48): success-->>getUserByPage  
+[INFO ] 2015-08-31 16:28:00,054(0) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:35): start-->>getUserByPage  
+[INFO ] 2015-08-31 16:28:00,063(9) --> [main] com.clps.managersystem.transaction.TransactionTemplate.execute(TransactionTemplate.java:15): TransactionManager init  
+[INFO ] 2015-08-31 16:28:00,067(13) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.init(ConnectionPoolManager.java:59): poolManager init start  
+[INFO ] 2015-08-31 16:28:00,072(18) --> [main] com.clps.managersystem.pool.ConnectionPoolImpl.init(ConnectionPoolImpl.java:45): pool init start  
+[INFO ] 2015-08-31 16:28:00,493(439) --> [main] com.clps.managersystem.pool.ConnectionPoolImpl.init(ConnectionPoolImpl.java:60): pool init success  
+[INFO ] 2015-08-31 16:28:00,495(441) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.init(ConnectionPoolManager.java:65): defaultPool init success  
+[INFO ] 2015-08-31 16:28:00,497(443) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.getConnection(ConnectionPoolManager.java:96): getConnection start  
+[INFO ] 2015-08-31 16:28:00,497(443) --> [main] com.clps.managersystem.pool.ConnectionPoolManager.getConnection(ConnectionPoolManager.java:100): getConnection success  
+[INFO ] 2015-08-31 16:28:00,521(467) --> [main] com.clps.managersystem.transaction.TransactionTemplate.execute(TransactionTemplate.java:24): TransactionManager end  
+[INFO ] 2015-08-31 16:28:00,522(468) --> [main] com.clps.managersystem.logproxy.LogHandler.invoke(LogHandler.java:48): success-->>getUserByPage  

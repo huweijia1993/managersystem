@@ -1,0 +1,26 @@
+2015-08-30 14:07:50,433 INFO [com.clps.managersystem.logproxy.LogHandler.invoke(33)] - <start-->>checkUser>
+2015-08-30 14:07:50,439 INFO [com.clps.managersystem.transaction.TransactionTemplate.execute(15)] - <TransactionManager init>
+2015-08-30 14:07:50,443 INFO [com.clps.managersystem.pool.ConnectionPoolManager.init(59)] - <poolManager init start>
+2015-08-30 14:07:50,446 INFO [com.clps.managersystem.pool.ConnectionPoolImpl.init(45)] - <pool init start>
+2015-08-30 14:07:51,129 INFO [com.clps.managersystem.pool.ConnectionPoolImpl.init(60)] - <pool init success>
+2015-08-30 14:07:51,131 INFO [com.clps.managersystem.pool.ConnectionPoolManager.init(65)] - <defaultPool init success>
+2015-08-30 14:07:51,133 INFO [com.clps.managersystem.pool.ConnectionPoolManager.getConnection(96)] - <getConnection start>
+2015-08-30 14:07:51,133 INFO [com.clps.managersystem.pool.ConnectionPoolManager.getConnection(100)] - <getConnection success>
+2015-08-30 14:07:51,328 INFO [com.clps.managersystem.transaction.TransactionTemplate.execute(24)] - <TransactionManager end>
+2015-08-30 14:07:51,329 INFO [com.clps.managersystem.logproxy.LogHandler.invoke(41)] - <success-->>checkUser>
+2015-08-30 21:34:51,986 INFO [com.clps.managersystem.logproxy.LogHandler.invoke(33)] - <start-->>checkUser>
+2015-08-30 21:34:51,994 INFO [com.clps.managersystem.transaction.TransactionTemplate.execute(15)] - <TransactionManager init>
+2015-08-30 21:34:51,998 INFO [com.clps.managersystem.pool.ConnectionPoolManager.init(59)] - <poolManager init start>
+2015-08-30 21:34:52,003 INFO [com.clps.managersystem.pool.ConnectionPoolImpl.init(45)] - <pool init start>
+2015-08-30 21:34:52,488 INFO [com.clps.managersystem.pool.ConnectionPoolManager.init(67)] - <poolManager init error>
+2015-08-30 21:34:52,490 ERROR [com.clps.managersystem.logproxy.LogHandler.invoke(43)] - <error-->>checkUser>
+2015-08-30 21:36:39,806 INFO [com.clps.managersystem.logproxy.LogHandler.invoke(33)] - <start-->>checkUser>
+2015-08-30 21:36:39,814 INFO [com.clps.managersystem.transaction.TransactionTemplate.execute(15)] - <TransactionManager init>
+2015-08-30 21:36:39,817 INFO [com.clps.managersystem.pool.ConnectionPoolManager.init(59)] - <poolManager init start>
+2015-08-30 21:36:39,822 INFO [com.clps.managersystem.pool.ConnectionPoolImpl.init(45)] - <pool init start>
+2015-08-30 21:36:40,367 INFO [com.clps.managersystem.pool.ConnectionPoolImpl.init(60)] - <pool init success>
+2015-08-30 21:36:40,368 INFO [com.clps.managersystem.pool.ConnectionPoolManager.init(65)] - <defaultPool init success>
+2015-08-30 21:36:40,369 INFO [com.clps.managersystem.pool.ConnectionPoolManager.getConnection(96)] - <getConnection start>
+2015-08-30 21:36:40,370 INFO [com.clps.managersystem.pool.ConnectionPoolManager.getConnection(100)] - <getConnection success>
+2015-08-30 21:36:40,560 INFO [com.clps.managersystem.transaction.TransactionTemplate.execute(24)] - <TransactionManager end>
+2015-08-30 21:36:40,560 INFO [com.clps.managersystem.logproxy.LogHandler.invoke(41)] - <success-->>checkUser>
