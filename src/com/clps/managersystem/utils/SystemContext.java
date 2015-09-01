@@ -14,6 +14,8 @@ public class SystemContext {
 	private static ThreadLocal<Integer> pageCount=new ThreadLocal<Integer>();//总页数
 	
 	private static ThreadLocal<Integer> pageSize=new ThreadLocal<Integer>();//每页数量
+	
+	
 
 	public static Integer getPageNo() {
 		return pageNo.get();

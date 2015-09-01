@@ -57,7 +57,7 @@ public class UserDaoImpl extends BaseDao<User> implements IUserDao<User>{
 	
 	@Override
 	public List<User> list(String sql, Object[] paras) {
-		return encapsulateObject(this.abstractList(sql, paras));
+		return encapsulateObject(this.queryCommonList(sql, paras));
 		
 	}
 
@@ -79,12 +79,13 @@ public class UserDaoImpl extends BaseDao<User> implements IUserDao<User>{
 		int pageNo=SystemContext.getPageNo();
 		int pageSize=SystemContext.getPageSize();
 		
-		String  countSql="select * from user";
+		String  countSql="select count(*) from user";
 		int count=getPageCount(countSql);
+		SystemContext.setPageCount(count);
 		if(count>0){
 			//如果页数大于0，即有数据
 			sql=setPages(sql,pageNo,pageSize);
-			List<User> result=this.encapsulateObject(abstractList(sql, paras));
+			List<User> result=this.encapsulateObject(queryCommonList(sql, paras));
 			pages.setTotal(count);//设置总数
 			pages.setList(result);//将数据放进去
 			return pages; 
@@ -109,12 +110,13 @@ public class UserDaoImpl extends BaseDao<User> implements IUserDao<User>{
 	@Override
 	public User queryObject(String sql, Object[] paras) {
 		List<ArrayList<Object>> list=new ArrayList<ArrayList<Object>>();
-		ArrayList<Object> result=abstractObject(sql,paras);
+		ArrayList<Object> result=queryCommon(sql,paras);
 		if(result==null){
 			return null;
 		}else{
 			list.add(result);
-			return encapsulateObject(list).get(0);
+			List<User> user=encapsulateObject(list);
+			return user.size()!=0?user.get(0):null;
 		}
 		
 	}

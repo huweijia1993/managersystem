@@ -270,62 +270,7 @@ public abstract class BaseDao<T> implements IBaseDao<T>{
 	}
 	
 	
-	/**
-	 * 
-	  * abstractList
-	  * TODO Applicable conditions
-	  * TODO	Execution process
-	  * TODO	use-method
-	  * TODO	attention
-	  *
-	  * @Title: abstractList
-	  * @Description: 不带分页的列表查询，初始封装
-	  * @param @param sql
-	  * @param @param paras
-	  * @param @return    
-	  * @return List<ArrayList<Object>>   
-	  * @throws
-	 */
-	protected List<ArrayList<Object>> abstractList(String sql,Object paras[]){
-	//	conn=getConnection();
-		ps=getPreparedStatement(sql, conn);
-		
-		setParameter(ps, paras);
-		rs=getResultSet(ps, sql);
-		return encapsulateList(rs);
-	
-	}
-	
-	/**
-	 * 
-	  * abstractObject
-	  * TODO Applicable conditions
-	  * TODO	Execution process
-	  * TODO	use-method
-	  * TODO	attention
-	  *
-	  * @Title: abstractObject
-	  * @Description: 单个对象的初始封装
-	  * @param @param sql
-	  * @param @param paras
-	  * @param @return    
-	  * @return List<Object>   
-	  * @throws
-	 */
 
-	protected ArrayList<Object> abstractObject(String sql,Object[] paras){
-		List<ArrayList<Object>>res=this.abstractList(sql, paras);
-		if(res.size()>0){
-			return res.get(0);
-		}else{
-//			StringBuilder sb=new StringBuilder("没有该用户，请检查sql语句")
-//					.append(sql)
-//					.append("参数：")
-//					.append(paras.toString());
-//			throw new DaoException(sb.toString(),ExceptionCode.NOSUCHOBJECT);
-			return null;
-		}
-	}
 	
 	protected List<ArrayList<Object>> abstractListByPage(String sql,String paras[]){
 	//	conn=getConnection();
@@ -401,6 +346,46 @@ public abstract class BaseDao<T> implements IBaseDao<T>{
 		
 		return stringBuilder.toString();
 	}
+	
+	
+	public List<ArrayList<Object>> queryCommonList(String sql,Object[] paras){
+		ps=getPreparedStatement(sql, conn);
+		setParameter(ps, paras);
+		rs=getResultSet(ps, sql);
+		return encapsulateList(rs);
+	}
+	
+	
+	
+	
+	
+	
+	public List<ArrayList<Object>> queryCommonList(String sql,Object para){
+		return queryCommonList(sql,new Object[]{para});
+	}
+	public List<ArrayList<Object>> queryCommonList(String sql){
+		return queryCommonList(sql,null);
+	}
+	
+	public ArrayList<Object> queryCommon(String sql,Object[] paras){
+		List<ArrayList<Object>> list=queryCommonList(sql,paras);
+		if(list.size()==1){
+			//用于查询单个对象
+			return list.get(0);
+		}else{
+			return null;
+		}
+	}
+	public ArrayList<Object> queryCommon(String sql,Object para){
+		return queryCommon(sql,new Object[]{para});
+	}
+	public ArrayList<Object>	queryCommon(String sql){
+		return queryCommon(sql,null);
+	}
+	
+	
+	
+	
 	
 	
 }

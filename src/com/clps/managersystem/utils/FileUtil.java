@@ -21,6 +21,8 @@ import org.apache.log4j.Logger;
 
 import com.clps.managersystem.exception.ExceptionCode;
 import com.clps.managersystem.exception.ServiceException;
+import com.clps.managersystem.logproxy.LogHandler;
+import com.clps.managersystem.service.IUserService;
 
 /**
  * @ClassName: PropertiesUtil
@@ -136,6 +138,31 @@ public class FileUtil {
 
 		}
 	}
+	
+	/**
+	 * 
+	  * createNewInstance
+	  * TODO Applicable conditions
+	  * TODO	Execution process
+	  * TODO	use-method
+	  * TODO	attention
+	  *
+	  * @Title: createNewInstance
+	  * @Description: 封装接口反射
+	  * @param @param interfaceName
+	  * @param @return    
+	  * @return Object   
+	  * @throws
+	 */
+	public static Object createNewInstance(String interfaceName){
+		LogHandler logHandler=new LogHandler();
+		Properties properties=FileUtil.getProperties(FileUtil.getClassesFile("reflectFile.properties"));
+		String fileName=properties.getProperty(interfaceName);
+		return logHandler.newProxyInstance(FileUtil.getClassInstance(fileName));
+		
+	}
+	
+	
 	
 	
 	

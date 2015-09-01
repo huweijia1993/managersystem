@@ -22,7 +22,7 @@ public class LogHandler implements InvocationHandler{
 	private Object targetObject;
 	private static Logger log=Logger.getLogger(LogHandler.class);
 	
-	public Object newProxyInstance(Object targetObject){
+	public  Object newProxyInstance(Object targetObject){
 		this.targetObject=targetObject;
 		return Proxy.newProxyInstance(targetObject.getClass().getClassLoader()
 				, targetObject.getClass().getInterfaces(), this);

@@ -1,5 +1,6 @@
 package com.clps.managersystem.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.clps.managersystem.model.PageUtil;
@@ -130,7 +131,45 @@ public interface IBaseDao<T> {
 	public T queryObject(String sql);
 	
 	
+	/**
+	 * 
+	  * queryCommon
+	  * TODO Applicable conditions
+	  * TODO	Execution process
+	  * TODO	use-method
+	  * TODO	attention
+	  *
+	  * @Title: queryCommon
+	  * @Description: 普通查询，返回单列
+	  * @param @param sql
+	  * @param @param paras
+	  * @param @return    
+	  * @return List<Object>   
+	  * @throws
+	 */
+	public ArrayList<Object> queryCommon(String sql,Object[] paras);
+	public ArrayList<Object> queryCommon(String sql,Object para);
+	public ArrayList<Object>	queryCommon(String sql);
 	
+	/**
+	 * 
+	  * queryCommonList
+	  * TODO Applicable conditions
+	  * TODO	Execution process
+	  * TODO	use-method
+	  * TODO	attention
+	  *
+	  * @Title: queryCommonList
+	  * @Description: 普通查询，返回列表
+	  * @param @param sql
+	  * @param @param paras
+	  * @param @return    
+	  * @return List<ArrayList<Object>>   
+	  * @throws
+	 */
+	public List<ArrayList<Object>> queryCommonList(String sql,Object[] paras);
+	public List<ArrayList<Object>> queryCommonList(String sql,Object para);
+	public List<ArrayList<Object>> queryCommonList(String sql);
 	
 	
 

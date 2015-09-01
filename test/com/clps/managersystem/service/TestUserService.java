@@ -25,15 +25,11 @@ public class TestUserService {
 	
 	@Test
 	public void testProxy(){
-		LogHandler logHandler=new LogHandler();
-		Properties properties=FileUtil.getProperties(FileUtil.getClassesFile("reflectFile.properties"));
-		String fileName=properties.getProperty("IUserService");
-		IUserService ius=(IUserService)logHandler.newProxyInstance(FileUtil.getClassInstance(fileName));
-		System.out.println(fileName);
-
+		IUserService ius=(IUserService)FileUtil.createNewInstance("IUserService");
+		
 		User user=new User();
 		user.setUserName("hu");
-		user.setUserPassword("hu12");
+		user.setUserPassword("hu123");
 		
 		boolean flag=ius.checkUser(user);
 		System.out.println(flag);
@@ -60,7 +56,7 @@ public class TestUserService {
 		System.out.println("dd"+fileName);
 		IUserService ius=(IUserService)logHandler.newProxyInstance(FileUtil.getClassInstance(fileName));
 		
-		SystemContext.setPageNo(2);
+		SystemContext.setPageNo(1);
 		SystemContext.setPageSize(5);
 		
 		List<User> users=ius.getUserByPage();

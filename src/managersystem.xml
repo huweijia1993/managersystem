@@ -7,18 +7,26 @@
 
 
 	<package name="managersystemPublic" namespace="/" extends="managersystemGlobal">
-		<action name="Home" class="com.clps.managersystem.action.Home">
+		<action name="Home" class="com.clps.managersystem.action.HomeAction" >
 			<result >/WEB-INF/jsp/home.jsp</result>
 		</action>
-		
-		<action name="LoginForm" >
+
+		<action name="LoginForm" class="com.clps.managersystem.action.HomeAction">
 			<result>/WEB-INF/jsp/login.jsp</result>
 		</action>
-		
-		<action name="Login" class="com.clps.managersystem.action.Login">
-			<result type="redirectAction" name="success">Home</result>
+
+		<action name="Login" class="com.clps.managersystem.action.LoginAction" method="checkLogin">
+			<result name="admin-success">/WEB-INF/jsp/admin.jsp</result>
+			<result name="user-success">/WEB-INF/jsp/user.jsp</result>
 			<result name="input">/WEB-INF/jsp/login.jsp</result>
 		</action>
+		<action name="show" class="com.clps.managersystem.action.UserAction" method="showUserInfo">
+			<result name="showUserInfo">/WEB-INF/jsp/admininfo.jsp</result>
+		</action>
+		<action name="logout" class="com.clps.managersystem.action.LogoutAction" method="logout">
+			<result name="indexPage">index.jsp</result>
+		</action>
+		
 	
 	</package>
 </struts>
