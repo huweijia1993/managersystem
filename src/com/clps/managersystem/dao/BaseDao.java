@@ -123,7 +123,7 @@ public abstract class BaseDao<T> implements IBaseDao<T>{
 			log.error(sb.toString());
 			throw new DaoException(sb.toString(),e,ExceptionCode.UPDATEFAILER);
 		}finally{
-			close(null,ps);
+		//	close(null,null);
 		}
 		return result;
 	}
@@ -150,10 +150,13 @@ public abstract class BaseDao<T> implements IBaseDao<T>{
 		//设置参数
 		setParameter(ps, paras);
 		int result=execUpdate(ps,sql);
+		System.out.println("执行结果是什"+result);
 		if(result!=0){
 			//执行正确 获取自增长ID
 			int id=0;
 			try {
+				System.out.println("rs"+rs);
+				System.out.println("ps"+ps);
 				rs=ps.getGeneratedKeys();
 				if(rs.next()){
 					id=rs.getInt(1);
@@ -197,6 +200,7 @@ public abstract class BaseDao<T> implements IBaseDao<T>{
 		int result=execUpdate(ps,sql);
 		
 		System.out.println("结果是："+sql+" "+result);
+		close(null,ps);
 		return result==0?false:true;
 		//关闭资源交给事务
 	}

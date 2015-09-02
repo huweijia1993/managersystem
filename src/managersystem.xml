@@ -17,6 +17,14 @@
 		<action name="RegisterForm" class="com.clps.managersystem.action.HomeAction">
 			<result>/WEB-INF/jsp/register.jsp</result>
 		</action>
+		<action name="Register" class="com.clps.managersystem.action.RegistAction" method="gotoRegisterForm">
+			<result>/WEB-INF/jsp/registersuccess.jsp</result>
+			<result name="input">/WEB-INF/jsp/register.jsp</result>
+		</action>
+		<action name="Validator" class="com.clps.managersystem.action.RegistAction" method="checkRegisterMail">
+			<result>/WEB-INF/jsp/login.jsp</result>
+			<result name="input">/WEB-INF/jsp/register.jsp</result>
+		</action>
 
 		<action name="Login" class="com.clps.managersystem.action.LoginAction" method="checkLogin">
 			<result name="admin-success">/WEB-INF/jsp/admin.jsp</result>

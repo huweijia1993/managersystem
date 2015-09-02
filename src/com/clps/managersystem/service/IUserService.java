@@ -63,4 +63,24 @@ public interface IUserService {
 	 */
 	public boolean editUser(User user);
 	
+	/**
+	 * 
+	  * addUser
+	  * TODO Applicable conditions
+	  * TODO	Execution process
+	  * TODO	use-method
+	  * TODO	attention
+	  *
+	  * @Title: addUser
+	  * @Description: 添加用户
+	  * @param @param user
+	  * @param @return    
+	  * @return boolean   
+	  * @throws
+	 */
+	public boolean addUser(User user);
+	
+	
+	
+	
 }

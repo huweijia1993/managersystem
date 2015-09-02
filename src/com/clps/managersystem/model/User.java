@@ -12,6 +12,17 @@ public class User {
 	private String userHometown;
 	private float userHeight;
 	private String userLevel;
+	private String userEmail;
+	
+	
+	
+	
+	public String getUserEmail() {
+		return userEmail;
+	}
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
 	public int getUserId() {
 		return userId;
 	}
@@ -65,6 +76,20 @@ public class User {
 		return "User [userId=" + userId + ", userName=" + userName + ", userPassword=" + userPassword + ", userGender="
 				+ userGender + ", userBirthday=" + userBirthday + ", userHometown=" + userHometown + ", userHeight="
 				+ userHeight + ", userLevel=" + userLevel + "]";
+	}
+	public User(){
+		
+	}
+	public User(String userName, String userPassword, String userGender, Date userBirthday, String userHometown,
+			float userHeight, String userEmail) {
+		super();
+		this.userName = userName;
+		this.userPassword = userPassword;
+		this.userGender = userGender;
+		this.userBirthday = userBirthday;
+		this.userHometown = userHometown;
+		this.userHeight = userHeight;
+		this.userEmail = userEmail;
 	}
 	
 	

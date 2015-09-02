@@ -1,5 +1,6 @@
 package com.clps.managersystem.service;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -67,6 +68,21 @@ public class TestUserService {
 	
 	
 	}
+	
+	@Test
+	public void testAdd(){
+		LogHandler logHandler=new LogHandler();
+		Properties properties=FileUtil.getProperties(FileUtil.getClassesFile("reflectFile.properties"));
+		String fileName=properties.getProperty("IUserService");
+		System.out.println("dd"+fileName);
+		IUserService ius=(IUserService)logHandler.newProxyInstance(FileUtil.getClassInstance(fileName));
+
+		User user=new User("huweijia","12345","F",new Date(1993,12,13),"anhuiprovice",1.7f,"1316809562@qq.com");
+	
+		boolean flag=ius.addUser(user);
+		System.out.println(flag);
+	}
+	
 	
 	
 	

@@ -46,7 +46,7 @@
     			}
     		}else if(monthValue==2){
     			//再分闰年与平年
-    			if(yearValue/400==0||(year%4==0&&year%100!=0)){
+    			if(yearValue%400==0||(year%4==0&&year%100!=0)){
     				//该年是闰年
     				day.options.length=0;
     				for(var i=1;i<30;i++){
@@ -78,8 +78,8 @@
     
     
 </head>
-<body onload="init()">
-<form action="" method="post">
+<body>
+<form action="Register.action" method="post">
 <h3 align="center"><s:text name="register" /></h3>
 <table class="table table-bordered table-hover definewidth m10">
     <tr>
@@ -105,41 +105,48 @@
     <tr>
         <td class="tableleft">生日</td>
         <td>
-        	<select id="year">
-        		<option value="-1">年</option>
-        		<s:iterator begin="0" end="50" var="year">
-        			<option value="2015-${year}"><s:property value="2015-#year" /></option>
-        		</s:iterator>
-        	</select>
-        	<select id="month" onchange="selectMonth(this)">
-        		<s:iterator begin="1" end="12" var="month">
-        			<option value="${month}"><s:property value="#month" /></option>
-        		</s:iterator>
+        		<input type="date" name="userBirthday" />
+        
+<%--         	<select id="year"> --%>
+<!--         		<option value="-1">年</option> -->
+<%--         		<s:iterator begin="0" end="50" var="year"> --%>
+<%--         			<option value="2015-${year}"><s:property value="2015-#year" /></option> --%>
+<%--         		</s:iterator> --%>
+<%--         	</select> --%>
+<%--         	<select id="month" onchange="selectMonth(this)"> --%>
+<!--         		<option value="-1">月</option> -->
+<%--         		<s:iterator begin="1" end="12" var="month"> --%>
+<%--         			<option value="${month}"><s:property value="#month" /></option> --%>
+<%--         		</s:iterator> --%>
         	
-        	</select>
-        	<select id="day" onchange="selectDay(this)">
-        		<option value="-1">日</option>
-        		<s:iterator  begin="1" end="30" var="day">
-        			<option value="${day}">
-        				<s:property value="#day"/>
-        			</option>
-        		</s:iterator>
-        	</select>
+<%--         	</select> --%>
+<%--         	<select id="day" onchange="selectDay(this)"> --%>
+<!--         		<option value="-1">日</option> -->
+<%--         		<s:iterator  begin="1" end="30" var="day"> --%>
+<%--         			<option value="${day}"> --%>
+<%--         				<s:property value="#day"/> --%>
+<!--         			</option> -->
+<%--         		</s:iterator> --%>
+<%--         	</select> --%>
         
         </td>
     </tr>
     <tr>
         <td class="tableleft">家乡</td>
-        <td></td>
+        <td>
+        	<input type="text" name="userHometown" />
+        </td>
     </tr>
     <tr>
         <td class="tableleft">身高</td>
-        <td></td>       
+        <td>
+        	<input type="text" name="userHeight" />
+        </td>       
     </tr>
     
      <tr>
-        <td class="tableleft">问题</td>   
-        <td></td>    
+        <td class="tableleft">邮箱</td>   
+        <td><input type="text" name="userEmail" /></td>    
     </tr>
     
     <tr>

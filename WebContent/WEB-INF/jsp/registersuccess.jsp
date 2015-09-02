@@ -6,6 +6,8 @@
     <title></title>
 </head>
 <body>
+
+<s:debug />
 <h2 style="color:red">浏览器崩溃，CSS无法加载！！！！！！！</h2>
 <table>
 <s:form action="" method="post">

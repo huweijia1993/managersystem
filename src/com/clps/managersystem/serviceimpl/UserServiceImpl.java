@@ -76,10 +76,10 @@ public class UserServiceImpl implements IUserService{
 
 			@Override
 			public Boolean doInTransaction() {
-				String sql="update user set user_name=?,user_password=?,user_gender=?,user_birthday=?,user_hometown=?,user_height=?  where user_id=?";
+				String sql="update user set user_name=?,user_password=?,user_gender=?,user_birthday=?,user_hometown=?,user_height=?,user_email  where user_id=?";
 				String paras[]=new String[]{user.getUserName(),user.getUserPassword(),
 						user.getUserGender(),user.getUserBirthday()+"",user.getUserHometown(),
-						user.getUserHeight()+"",user.getUserId()+""};
+						user.getUserHeight()+"",user.getUserEmail(),user.getUserId()+""};
 				
 				return ibdf.createDao().update(sql,paras);	
 				
@@ -88,6 +88,31 @@ public class UserServiceImpl implements IUserService{
 		});
 		
 		return flag;
+	}
+
+	@Override
+	public boolean addUser(final User user) {
+		Integer id=TransactionTemplate.execute(new TransactionCallback<Integer>(){
+
+			@Override
+			public Integer doInTransaction() {
+				String sql="insert into user (user_name,user_password,user_gender,user_birthday,user_hometown,user_height,user_active,user_email) values(?,?,?,?,?,?,?,?)";
+				String paras[]=new String[]{user.getUserName(),user.getUserPassword(),
+						user.getUserGender(),user.getUserBirthday()+"",user.getUserHometown(),
+						user.getUserHeight()+"","1",user.getUserEmail()};
+				
+				return ibdf.createDao().add(sql,paras);	
+				
+			}
+			
+		});
+		if(id!=0){
+			user.setUserId(id);
+			return true;
+		}else{
+			return false;
+		}
+		
 	}
 	
 	

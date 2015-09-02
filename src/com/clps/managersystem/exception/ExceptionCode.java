@@ -40,6 +40,10 @@ public class ExceptionCode {
 	public static int POOLCLOSEERROR=15;
 	//类找不到
 	public static int CLASSNOTFOUND=16;
+
+	//发送邮件失败
+	public static int SENDMAILFAILED=18;
+	
 	
 	//服务错误
 	public static int LOGINERROR=17;
