@@ -47,6 +47,20 @@ public interface IUserService {
 	 */
 	public List<User> getUserByPage();
 	
-	
+	/**
+	 * 
+	  * editUser
+	  * TODO Applicable conditions
+	  * TODO	Execution process
+	  * TODO	use-method
+	  * TODO	attention
+	  *
+	  * @Title: editUser
+	  * @Description: 修改用户信息
+	  * @param @return    
+	  * @return boolean   
+	  * @throws
+	 */
+	public boolean editUser(User user);
 	
 }

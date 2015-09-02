@@ -14,6 +14,9 @@
 		<action name="LoginForm" class="com.clps.managersystem.action.HomeAction">
 			<result>/WEB-INF/jsp/login.jsp</result>
 		</action>
+		<action name="RegisterForm" class="com.clps.managersystem.action.HomeAction">
+			<result>/WEB-INF/jsp/register.jsp</result>
+		</action>
 
 		<action name="Login" class="com.clps.managersystem.action.LoginAction" method="checkLogin">
 			<result name="admin-success">/WEB-INF/jsp/admin.jsp</result>
@@ -25,6 +28,12 @@
 		</action>
 		<action name="logout" class="com.clps.managersystem.action.LogoutAction" method="logout">
 			<result name="indexPage">index.jsp</result>
+		</action> 
+		<action name="editForm" class="com.clps.managersystem.action.UserAction" method="editUserInfoForm">
+			<result name="go">/WEB-INF/jsp/userinfo.jsp</result>
+		</action>
+		<action name="edit" class="com.clps.managersystem.action.UserAction" method="editUserInfo">
+			<result name="input">/WEB-INF/jsp/userinfo.jsp</result>
 		</action>
 		
 	

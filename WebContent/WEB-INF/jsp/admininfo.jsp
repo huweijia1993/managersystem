@@ -19,6 +19,7 @@
 
 </head>
 <body>
+	<center>
 	<table cellpadding="10"  cellspacing="0" border="1">
         <thead>
             <tr><td>用户id</td><td>用户名</td><td>密码</td><td>性别</td>
@@ -43,7 +44,7 @@
         </tbody> 
      </table>
      		 <br />
-     		<s:if test="pageNo>0">
+     		<s:if test="pageNo>1">
              	 <a href="<s:url action='show' ><s:param name='pageNo' value='pageNo-1' /></s:url>">
              	 	上一页
              	 </a>
@@ -51,16 +52,28 @@
              
      		<s:if test="pageNo>3">
      			<s:iterator begin="1" end="5" var="i">
-     				<a href="<s:url action='show' ><s:param name='pageNo' value='pageNo-3+#i' /></s:url>">
-     					<s:property value="pageNo-3+#i"/>
-     				</a>
+     				<s:if test="#i==3">
+     					<a  style="font: italic,bold;color: red;font-size: 15pt;"><s:property value="pageNo-3+#i" /></a>
+     				</s:if>
+     				<s:else>
+	     				<a  href="<s:url action='show' ><s:param name='pageNo' value='pageNo-3+#i' /></s:url>">
+	     					<s:property value="pageNo-3+#i"/>
+	     				</a>
+     				</s:else>
+     				
      			</s:iterator>
      		</s:if>
      		<s:else>
      			<s:iterator begin="1" end="5" var="i">
-     				<a href="<s:url action='show' ><s:param name='pageNo' value='#i' /></s:url>">
-     					<s:property value="#i"/>
-     				</a>
+     				<s:if test="pageNo==#i">
+     					<a href="javascript:{0}" style="font: italic,bold;color: red;font-size: 15pt;"><s:property value="#i" /></a>
+     				</s:if>
+     				<s:else>
+     					<a href="<s:url action='show' ><s:param name='pageNo' value='#i' /></s:url>">
+     						<s:property value="#i"/>
+     					</a>
+     				</s:else>
+     			
      			</s:iterator>
      		</s:else>
      		  <s:if test="pageNo<pageCount">
@@ -69,6 +82,6 @@
      				</a>
              </s:if>
      		
-           
+        </center>  
 </body>
 </html>

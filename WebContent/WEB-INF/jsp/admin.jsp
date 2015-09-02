@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*,com.clps.managersystem.model.User" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +16,7 @@
         
     </div>
 
-    <div class="dl-log">欢迎您，<span class="dl-log-user"><%=session.getAttribute("username") %></span><a href="" title="退出系统" class="dl-log-quit">[注销]</a>
+    <div class="dl-log">欢迎您，<span class="dl-log-user"><%=((User)session.getAttribute("user")).getUserName() %></span><a href="" title="退出系统" class="dl-log-quit">[注销]</a>
     </div>
 </div>
 <div class="content">
@@ -36,8 +36,8 @@
 <script type="text/javascript" src="assets/js/config-min.js"></script>
 <script>
     BUI.use('common/main',function(){
-        var config = [{id:'1',menu:[{text:'个人中心',items:[{id:'2',text:'个人信息',href:'show.action'},{id:'3',text:'待开发功能',href:''}]}]},
-                      {id:'7',menu:[{text:'用户信息管理',items:[{id:'8',text:'查看用户信息',href:''},{id:'9',text:'问题信息',href:'for-questioninfo.jsp'}]}]}];
+        var config = [{id:'1',menu:[{text:'个人中心',items:[{id:'2',text:'个人信息',href:'editForm.action'},{id:'3',text:'待开发功能',href:''}]}]},
+                      {id:'7',menu:[{text:'用户信息管理',items:[{id:'8',text:'查看用户信息',href:'show.action'},{id:'9',text:'问题信息',href:'for-questioninfo.jsp'}]}]}];
         new PageUtil.MainPage({
             modulesConfig : config
         });

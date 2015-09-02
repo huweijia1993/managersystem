@@ -61,9 +61,8 @@ public class LoginAction extends ActionSupport implements ModelDriven<User>,Sess
 	 * @return
 	 */
 	public String checkLogin(){
-			System.out.println(user.getUserName()+"dafwe");
 			if(ius.checkUser(user)){
-				session.put("username",user.getUserName());
+				session.put("user",user);
 				if(user.getUserLevel().equals("1")){
 					return "admin-success";
 

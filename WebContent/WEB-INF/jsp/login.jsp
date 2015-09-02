@@ -103,7 +103,7 @@ html,body{
 					<div class="col-xs-12">
 						<div class="input-group">
 							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-							<input type="text" id="username" name="userName" class="form-control" placeholder="用户名" autocomplete="off" autofocus required>
+							<input type="text" id="username" name="userName" class="form-control" placeholder="<s:text name='userName' />" autocomplete="off" autofocus required>
 						</div>
 					</div>
 				</div>
@@ -112,7 +112,7 @@ html,body{
 					<div class="col-xs-12">
 						<div class="input-group">
 							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-							<input type="text" id="password" name="userPassword" class="form-control" placeholder="密码" autocomplete="off" required>
+							<input type="password" id="password" name="userPassword" class="form-control" placeholder="<s:text name='userPassword' />" autocomplete="off" required>
 						</div>
 					</div>
 				</div>

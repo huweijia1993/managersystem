@@ -2,6 +2,10 @@ package com.clps.managersystem.action;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.clps.managersystem.model.User;
 import com.clps.managersystem.service.IUserService;
@@ -9,6 +13,7 @@ import com.clps.managersystem.utils.FileUtil;
 import com.clps.managersystem.utils.SystemContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.util.ValueStack;
 
 
 /**
@@ -19,7 +24,7 @@ import com.opensymphony.xwork2.ModelDriven;
   * @date 2015年9月1日 下午12:57:47
   *
  */
-public class UserAction extends ActionSupport implements ModelDriven<User>{
+public class UserAction extends ActionSupport implements ModelDriven<User>,SessionAware{
 
 	/**
 	  * @Fields serialVersionUID : TODO
@@ -31,6 +36,19 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 	private List<User> users=new ArrayList<User>();
 	private int pageNo;
 	private int pageCount;
+	
+	//加一个备用消息
+	private String message;
+	
+	
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	private Map<String,Object> session;
+	
 	
 	
 	
@@ -60,7 +78,6 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 
 
 	public String showUserInfo(){
-		System.out.println("pageNo"+pageNo);
 		if(pageNo==0){
 			pageNo=1;
 		}
@@ -71,11 +88,62 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 		return "showUserInfo";
 	}
 
-
+	/**
+	 * 
+	  * editUserInfoForm
+	  * TODO Applicable conditions
+	  * TODO	Execution process
+	  * TODO	use-method
+	  * TODO	attention
+	  *
+	  * @Title: editUserInfoForm
+	  * @Description: 跳转到修改用户界面
+	  * @param @return    
+	  * @return String   
+	  * @throws
+	 */
+	public String editUserInfoForm(){
+		 ValueStack valueStack = ServletActionContext.getContext().getValueStack();  
+	     valueStack.pop();  
+	     valueStack.push(session.get("user"));  
+		
+		
+		user=(User)session.get("user");
+		return "go";
+	}
+	/**
+	 * 
+	  * editUserInfo
+	  * TODO Applicable conditions
+	  * TODO	Execution process
+	  * TODO	use-method
+	  * TODO	attention
+	  *
+	  * @Title: editUserInfo
+	  * @Description: 修改用户
+	  * @param @return    
+	  * @return String   
+	  * @throws
+	 */
+	public String editUserInfo(){
+		if(ius.editUser(user)){
+			message=this.getText("editSuccess");
+			return "input";
+		}else{
+			message=this.getText("editFailed");
+			return "input";
+		}
+	}
+	
+	
 
 	@Override
 	public User getModel() {		
 		return user;
+	}
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session=session;
 	}
 	
 	

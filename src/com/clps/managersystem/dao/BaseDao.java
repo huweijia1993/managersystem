@@ -70,6 +70,7 @@ public abstract class BaseDao<T> implements IBaseDao<T>{
 			int i=1;
 			for(Object obj:paras){
 				try {
+					System.out.println("参数是："+obj);
 					ps.setObject(i++, obj);
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
@@ -195,6 +196,7 @@ public abstract class BaseDao<T> implements IBaseDao<T>{
 		setParameter(ps, paras);
 		int result=execUpdate(ps,sql);
 		
+		System.out.println("结果是："+sql+" "+result);
 		return result==0?false:true;
 		//关闭资源交给事务
 	}

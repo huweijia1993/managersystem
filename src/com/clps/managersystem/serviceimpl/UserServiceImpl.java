@@ -53,6 +53,7 @@ public class UserServiceImpl implements IUserService{
 		
 	}
 
+
 	@Override
 	public List<User> getUserByPage() {
 		PageUtil<User> pages=(PageUtil<User>) TransactionTemplate.execute(new TransactionCallback<PageUtil<User>>(){
@@ -68,6 +69,29 @@ public class UserServiceImpl implements IUserService{
 		
 		return pages.getList();
 	}
+
+	@Override
+	public boolean editUser(final User user) {
+		boolean flag=TransactionTemplate.execute(new TransactionCallback<Boolean>(){
+
+			@Override
+			public Boolean doInTransaction() {
+				String sql="update user set user_name=?,user_password=?,user_gender=?,user_birthday=?,user_hometown=?,user_height=?  where user_id=?";
+				String paras[]=new String[]{user.getUserName(),user.getUserPassword(),
+						user.getUserGender(),user.getUserBirthday()+"",user.getUserHometown(),
+						user.getUserHeight()+"",user.getUserId()+""};
+				
+				return ibdf.createDao().update(sql,paras);	
+				
+			}
+			
+		});
+		
+		return flag;
+	}
+	
+	
+	
 	
 	
 }

@@ -80,7 +80,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul class="nav" id="nav">
 					  <li class="current"><a href="index.html">Home</a></li>
 					  <li><a href="LoginForm.action">Login</a></li>
-					  <li><a href="register.action">Register</a></li>					  
+					  <li><a href="RegisterForm.action">Register</a></li>					  
 					</ul>
 					<script type="text/javascript" src="js/responsive-nav.js"></script>
 				</div>							
