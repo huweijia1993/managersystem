@@ -44,6 +44,20 @@
 			<result name="input">/WEB-INF/jsp/userinfo.jsp</result>
 		</action>
 		
+		<action name="QuestionManagerForm" class="com.clps.managersystem.action.HomeAction">
+			<result>/WEB-INF/jsp/managerquestioninfo.jsp</result>
+		</action>
+		<action name="QuestionForm" class="com.clps.managersystem.action.QuestionAction" method="goQuestionForm">
+			<result>/WEB-INF/jsp/questioninfo.jsp</result>
+		</action>
+		
+		<action name="QuestionAdd" class="com.clps.managersystem.action.QuestionAction" method="addQuestion">
+			<result name="success" type="redirectAction">QuestionForm</result>
+		</action>
+		
+		
+		
+		
 	
 	</package>
 </struts>

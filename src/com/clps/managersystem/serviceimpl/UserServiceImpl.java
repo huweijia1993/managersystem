@@ -96,10 +96,10 @@ public class UserServiceImpl implements IUserService{
 
 			@Override
 			public Integer doInTransaction() {
-				String sql="insert into user (user_name,user_password,user_gender,user_birthday,user_hometown,user_height,user_active,user_email) values(?,?,?,?,?,?,?,?)";
+				String sql="insert into user (user_name,user_password,user_gender,user_birthday,user_hometown,user_height,user_email) values(?,?,?,?,?,?,?)";
 				String paras[]=new String[]{user.getUserName(),user.getUserPassword(),
 						user.getUserGender(),user.getUserBirthday()+"",user.getUserHometown(),
-						user.getUserHeight()+"","1",user.getUserEmail()};
+						user.getUserHeight()+"",user.getUserEmail()};
 				
 				return ibdf.createDao().add(sql,paras);	
 				

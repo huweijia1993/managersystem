@@ -149,7 +149,7 @@ public interface IBaseDao<T> {
 	 */
 	public ArrayList<Object> queryCommon(String sql,Object[] paras);
 	public ArrayList<Object> queryCommon(String sql,Object para);
-	public ArrayList<Object>	queryCommon(String sql);
+	public ArrayList<Object> queryCommon(String sql);
 	
 	/**
 	 * 

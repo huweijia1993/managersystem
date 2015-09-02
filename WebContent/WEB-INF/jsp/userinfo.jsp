@@ -1,9 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="sx" uri="/struts-dojo-tags" %>
+<!DOCTYPE html>
 <html>
+
 <head>
+  <s:head theme="xhtml"/> 
+    <sx:head parseContent="true"/>    
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
@@ -12,15 +16,20 @@
 	<s:debug />
 	<s:form action="edit">
 		<s:hidden key="userId"></s:hidden>
-		<s:textfield key="userName" />
 		<s:textfield key="userPassword" />
-		<s:textfield key="userBirthday" />
-		<s:textfield key="userGender" />
+	
+		<sx:datetimepicker name="userBirthday" label="生日" displayFormat="yyyy-MM-dd" /> 
+		<s:radio list="#{'M':'Male','F':'Female','O':'Other'}" name="userGender" 
+			 label="性别"  value="userGender" />
+		
+		
 		<s:textfield key="userHeight" />
 		<s:textfield key="userHometown" />
 		
 		<s:submit value="save" />
 	</s:form>
+	  	
+		  		
 	<s:property value="message"/>
 	
 </body>

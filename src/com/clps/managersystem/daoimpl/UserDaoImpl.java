@@ -32,7 +32,7 @@ public class UserDaoImpl extends BaseDao<User> implements IUserDao<User>{
 	 */
 //	| USER_ID | USER_NAME | USER_PASSWORD | USER_GENDER | USER_BIRTHDAY | USER_HOMETOWN | USER_HEIGHT | USER_LEVEL | USER_ACTIVE |
 
-	private List<User> encapsulateObject(List<ArrayList<Object>> list){
+	private List<User> encapsulateUser(List<ArrayList<Object>> list){
 		List<User> result=new ArrayList<User>();
 		for(ArrayList<Object> array:list){
 			User user=new User();
@@ -44,6 +44,9 @@ public class UserDaoImpl extends BaseDao<User> implements IUserDao<User>{
 			user.setUserHometown(array.get(5).toString());
 			user.setUserHeight(Float.parseFloat(array.get(6).toString()));
 			user.setUserLevel(array.get(7).toString());
+			user.setUserActive(Boolean.parseBoolean(array.get(8).toString()));
+			user.setUserEmail(array.get(9).toString());
+			
 		
 			result.add(user);
 		}
@@ -57,7 +60,7 @@ public class UserDaoImpl extends BaseDao<User> implements IUserDao<User>{
 	
 	@Override
 	public List<User> list(String sql, Object[] paras) {
-		return encapsulateObject(this.queryCommonList(sql, paras));
+		return encapsulateUser(this.queryCommonList(sql, paras));
 		
 	}
 
@@ -85,7 +88,7 @@ public class UserDaoImpl extends BaseDao<User> implements IUserDao<User>{
 		if(count>0){
 			//如果页数大于0，即有数据
 			sql=setPages(sql,pageNo,pageSize);
-			List<User> result=this.encapsulateObject(queryCommonList(sql, paras));
+			List<User> result=this.encapsulateUser(queryCommonList(sql, paras));
 			pages.setTotal(count);//设置总数
 			pages.setList(result);//将数据放进去
 			return pages; 
@@ -115,7 +118,7 @@ public class UserDaoImpl extends BaseDao<User> implements IUserDao<User>{
 			return null;
 		}else{
 			list.add(result);
-			List<User> user=encapsulateObject(list);
+			List<User> user=encapsulateUser(list);
 			return user.size()!=0?user.get(0):null;
 		}
 		

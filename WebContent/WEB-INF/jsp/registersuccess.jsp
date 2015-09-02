@@ -6,28 +6,9 @@
     <title></title>
 </head>
 <body>
-
-<s:debug />
-<h2 style="color:red">浏览器崩溃，CSS无法加载！！！！！！！</h2>
-<table>
-<s:form action="" method="post">
-	<s:textfield name="user.userName"></s:textfield>
-	<s:textfield name="user.password"></s:textfield>
-	<s:textfield name="user.gender"></s:textfield>
-	<s:textfield name="user.birthday"></s:textfield>
-	<s:textfield name="user.hometown"></s:textfield>
 	
-	<tr><td></td><td><select name="userqa.questionId">	
-		<s:iterator value="#request.list" id="q">
-			<option value=<s:property value="#q.questionId"/>><s:property value="#q.questionContent"/></option>
-		</s:iterator>
-	</select>
-	</td></tr>
-	
-	<s:textfield name="userqa.answer"></s:textfield>
-	<s:submit value="哈哈哈"></s:submit>
-</s:form>
+		<h3>注册只差最后一步，请去你的邮箱验证</h3>
 
-</table>
+
 </body>
 </html>

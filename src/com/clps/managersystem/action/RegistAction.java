@@ -73,7 +73,7 @@ public class RegistAction extends ActionSupport implements ModelDriven<User>{
 		String email=user.getUserEmail();
 		String key=Md5Util.getMD5Code(user.getUserName());
 		session.setAttribute("key", key);
-		session.setAttribute("user",user);
+		session.setAttribute("registeruser",user);
 		String url="http://localhost:8080/ManagerSystem/Validator.action?key="+key+"&id="+id;
 		String message="只差最后一步激活链接"+url;
 	
@@ -113,7 +113,7 @@ public class RegistAction extends ActionSupport implements ModelDriven<User>{
 		}
 		System.out.println("sdfs获取到"+myc);
 		
-		User user=(User) session.getAttribute("user");
+		User user=(User) session.getAttribute("registeruser");
 		if(Md5Util.getMD5Code(user.getUserName()).equals(key)){
 			//匹配成功 将数据存到数据库中
 			if(ius.addUser(user)){

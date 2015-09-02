@@ -13,10 +13,18 @@ public class User {
 	private float userHeight;
 	private String userLevel;
 	private String userEmail;
+	private boolean userActive;
 	
 	
 	
 	
+	
+	public boolean isUserActive() {
+		return userActive;
+	}
+	public void setUserActive(boolean userActive) {
+		this.userActive = userActive;
+	}
 	public String getUserEmail() {
 		return userEmail;
 	}
