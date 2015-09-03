@@ -37,7 +37,7 @@
 <script type="text/javascript" src="assets/js/config-min.js"></script>
 <script>
     BUI.use('common/main',function(){
-        var config = [{id:'1',menu:[{text:'个人中心',items:[{id:'2',text:'个人信息',href:'editForm.action'},{id:'3',text:'安全中心',href:'QuestionForm.action'}]}]},
+        var config = [{id:'1',menu:[{text:'个人中心',items:[{id:'2',text:'个人信息',href:'editForm.action'},{id:'3',text:'安全中心',href:'GoSecure.action'}]}]},
                       {id:'7',menu:[{text:'待开发功能',items:[{id:'8',text:'待开发功能',href:''},{id:'9',text:'待开发功能',href:''}]}]}];
         new PageUtil.MainPage({
             modulesConfig : config

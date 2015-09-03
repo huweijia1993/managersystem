@@ -3,6 +3,9 @@ package com.clps.managersystem.action;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.clps.managersystem.model.Question;
@@ -109,6 +112,85 @@ public class QuestionAction extends ActionSupport implements ModelDriven<Questio
 			return INPUT;
 		}	
 	}
+	/**
+	 * 
+	  * goCheckAnswer
+	  * TODO Applicable conditions
+	  * TODO	Execution process
+	  * TODO	use-method
+	  * TODO	attention
+	  *
+	  * @Title: goCheckAnswer
+	  * @Description: 跳到安全中心，并携带问题数据
+	  * @param @return    
+	  * @return String   
+	  * @throws
+	 */
+	public String goCheckAnswer(){
+		int userId=((User)session.get("user")).getUserId();
+		question=iqs.getQuestionByUserId(userId);
+		if(question!=null){
+			return SUCCESS;
+		}else{
+			return INPUT;
+		}
+	}
+	
+	/**
+	 * 
+	  * checkAnswer
+	  * TODO Applicable conditions
+	  * TODO	Execution process
+	  * TODO	use-method
+	  * TODO	attention
+	  *
+	  * @Title: checkAnswer
+	  * @Description: 检查问题答案
+	  * @param @return    
+	  * @return String   
+	  * @throws
+	 */
+	
+	public String checkAnswer(){
+		HttpServletRequest request=ServletActionContext.getRequest();
+		String inputAnswer=request.getParameter("inputanswer");
+		String answer=request.getParameter("answer");
+		System.out.println(inputAnswer);
+		System.out.println("标准"+answer);
+		if(inputAnswer.equals(answer)){
+			//输入正确
+			return SUCCESS;
+		}else{
+			return INPUT;
+		}
+	
+	
+	}
+	
+	/**
+	 * 
+	  * updateQuestion
+	  * TODO Applicable conditions
+	  * TODO	Execution process
+	  * TODO	use-method
+	  * TODO	attention
+	  *
+	  * @Title: updateQuestion
+	  * @Description: 更新问题
+	  * @param @return    
+	  * @return String   
+	  * @throws
+	 */
+	public String updateQuestion(){
+		System.out.println(question.getQuestionId()+" "+question.getAnswer());
+		if(iqs.updateUserQuestion(question, ((User)session.get("user")).getUserId())){
+			message="修改成功";
+		}else{
+			message="修改失败";
+		}
+		return SUCCESS;
+	}
+	
 	
 	
 

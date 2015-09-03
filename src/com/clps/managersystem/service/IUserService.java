@@ -80,7 +80,23 @@ public interface IUserService {
 	 */
 	public boolean addUser(User user);
 	
-	
+	/**
+	 * 
+	  * resetPassword
+	  * TODO Applicable conditions
+	  * TODO	Execution process
+	  * TODO	use-method
+	  * TODO	attention
+	  *
+	  * @Title: resetPassword
+	  * @Description: 重置用户密码
+	  * @param @param password
+	  * @param @param userId
+	  * @param @return    
+	  * @return boolean   
+	  * @throws
+	 */
+	public boolean resetPassword(String password,int userId);
 	
 	
 }

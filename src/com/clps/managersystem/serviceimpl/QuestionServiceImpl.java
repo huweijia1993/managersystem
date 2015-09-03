@@ -49,6 +49,41 @@ public class QuestionServiceImpl implements IQuestionService{
 		});
 		return flag;
 	}
+
+	@Override
+	public Question getQuestionByUserId(final int id) {
+		Question question=TransactionTemplate.execute(new TransactionCallback<Question>(){
+
+			@Override
+			public Question doInTransaction() {	
+				String sql="select question.question_id,question.question_content,user_qa.answer from question,user_qa where question.question_id=user_qa.question_id and user_id="+id;
+			
+				IBaseDao<Question> ibd=ibf.createDao();
+				return ibd.queryObject(sql);
+			}
+			
+		});
+		
+		
+		return question;
+	}
+
+	@Override
+	public boolean updateUserQuestion(final Question question,final int userId) {
+		boolean flag=TransactionTemplate.execute(new TransactionCallback<Boolean>(){
+
+			@Override
+			public Boolean doInTransaction() {	
+				String sql="update user_qa set question_answer=?,question_id=? where user_id=?";
+				String paras[]=new String[]{question.getAnswer(),question.getQuestionId()+"",userId+""};
+				IBaseDao<Question> ibd=ibf.createDao();
+				return ibd.update(sql, paras);
+			}
+			
+		});
+		return flag;
+	
+	}
 	
 
 }

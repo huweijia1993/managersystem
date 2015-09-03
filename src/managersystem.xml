@@ -35,7 +35,7 @@
 			<result name="showUserInfo">/WEB-INF/jsp/admininfo.jsp</result>
 		</action>
 		<action name="logout" class="com.clps.managersystem.action.LogoutAction" method="logout">
-			<result name="indexPage">index.jsp</result>
+			<result name="indexPage">index.html</result>
 		</action> 
 		<action name="editForm" class="com.clps.managersystem.action.UserAction" method="editUserInfoForm">
 			<result name="go">/WEB-INF/jsp/userinfo.jsp</result>
@@ -55,9 +55,25 @@
 			<result name="success" type="redirectAction">QuestionForm</result>
 		</action>
 		
+		<action name="GoSecure" class="com.clps.managersystem.action.HomeAction">
+			<result>/WEB-INF/jsp/securetab.jsp</result>
+		</action>
+		<action name="GoPasswordReset" class="com.clps.managersystem.action.QuestionAction" method="goCheckAnswer">
+			<result>/WEB-INF/jsp/passwordreset.jsp</result>
+		</action>
 		
+		<action name="checkAnswer" class="com.clps.managersystem.action.QuestionAction" method="checkAnswer" >
+			<result >/WEB-INF/jsp/newpassword.jsp</result>
+		</action>
 		
-		
+		<action name="resetPassword" class="com.clps.managersystem.action.UserAction" method="resetPassword">
+			<result >/WEB-INF/jsp/returnsecure.jsp</result>
+			<result name="input">/WEB-INF/jsp/returnsecure.jsp</result>
+		</action>
+	
+		<action name="QuestionUpdate" class="com.clps.managersystem.action.QuestionAction" method="updateQuestion">
+			<result>/WEB-INF/jsp/returnsecure.jsp</result>
+		</action>
 	
 	</package>
 </struts>

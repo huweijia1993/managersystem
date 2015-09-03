@@ -128,10 +128,34 @@ public class UserAction extends ActionSupport implements ModelDriven<User>,Sessi
 	public String editUserInfo(){
 		if(ius.editUser(user)){
 			message=this.getText("editSuccess");
-			return "input";
+			return INPUT;
 		}else{
 			message=this.getText("editFailed");
-			return "input";
+			return INPUT;
+		}
+	}
+	
+	/**
+	 * 
+	  * resetPassword
+	  * TODO Applicable conditions
+	  * TODO	Execution process
+	  * TODO	use-method
+	  * TODO	attention
+	  *
+	  * @Title: resetPassword
+	  * @Description: 重置用户
+	  * @param @return    
+	  * @return String   
+	  * @throws
+	 */
+	public String resetPassword(){
+		if(ius.resetPassword(user.getUserPassword(), user.getUserId())){
+			this.setMessage("重置成功");
+			return SUCCESS;
+		}else{
+			this.setMessage("重置失败");
+			return SUCCESS;
 		}
 	}
 	

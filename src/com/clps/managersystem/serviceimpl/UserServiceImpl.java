@@ -50,6 +50,8 @@ public class UserServiceImpl implements IUserService{
 		user1.setUserHometown(user2.getUserHometown());
 		user1.setUserId(user2.getUserId());
 		user1.setUserLevel(user2.getUserLevel());
+		user1.setUserActive(user2.getUserActive());
+		user1.setUserEmail(user2.getUserEmail());
 		
 	}
 
@@ -113,6 +115,23 @@ public class UserServiceImpl implements IUserService{
 			return false;
 		}
 		
+	}
+
+	@Override
+	public boolean resetPassword(final String password,final int userId) {
+		boolean flag=TransactionTemplate.execute(new TransactionCallback<Boolean>(){
+
+			@Override
+			public Boolean doInTransaction() {
+				String sql="update user set user_password=?  where user_id=?";
+				String paras[]=new String[]{password,userId+""};
+				
+				return ibdf.createDao().update(sql,paras);	
+				
+			}
+			
+		});
+		return flag;
 	}
 	
 	

@@ -32,6 +32,10 @@ public class QuestionDaoImpl extends BaseDao<Question> implements IQuestionDao{
 			Question question=new Question();
 			question.setQuestionId(Integer.parseInt(res.get(0).toString()));
 			question.setQuestionContent(res.get(1).toString());
+			if(res.size()==3){
+				question.setAnswer(res.get(2).toString());
+			}
+			
 			questions.add(question);
 			
 		}
@@ -75,17 +79,22 @@ public class QuestionDaoImpl extends BaseDao<Question> implements IQuestionDao{
 
 	@Override
 	public Question queryObject(String sql, Object[] paras) {
-		return null;
+		List<Question> list=this.encapsulateQuestion(queryCommonList(sql, paras));
+		if(list.size()==1){
+			return list.get(0);
+		}else{
+			return null;
+		}
 	}
 
 	@Override
 	public Question queryObject(String sql, Object para) {
-		return null;
+		return this.queryObject(sql, new Object[]{para});
 	}
 
 	@Override
 	public Question queryObject(String sql) {
-		return null;
+		return this.queryObject(sql, null);
 	}
 
 }

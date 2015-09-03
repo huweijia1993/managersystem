@@ -40,4 +40,26 @@ public interface IQuestionService {
 	 */
 	public boolean addQuestionAnswer(Question question,int userId);
 	
+	/**
+	 * 
+	  * getQuestionByUserId
+	  * TODO Applicable conditions
+	  * TODO	Execution process
+	  * TODO	use-method
+	  * TODO	attention
+	  *
+	  * @Title: getQuestionByUserId
+	  * @Description: 根据用户id获取问题
+	  * @param @param id
+	  * @param @return    
+	  * @return Question   
+	  * @throws
+	 */
+	public Question getQuestionByUserId(int id);
+	
+	
+	public boolean updateUserQuestion(Question question,int userId);
+	
+	
+	
 }

@@ -19,7 +19,7 @@ public class User {
 	
 	
 	
-	public boolean isUserActive() {
+	public boolean getUserActive() {
 		return userActive;
 	}
 	public void setUserActive(boolean userActive) {
